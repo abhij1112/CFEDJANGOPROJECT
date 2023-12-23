@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://unpkg.com/htmx.org@1.9.7"
+            integrity="sha384-EAzY246d6BpbWR7sQ8+WEm40J8c3dHFsqC58IgPlh4kMbRRI6P6WA+LA/qGAyAu8"
+            crossorigin="anonymous"></script>
+        
+        <link rel="stylesheet" href="{% static "recipes/recipes-htmx.css" %}" />
+
+    </head>
+    <body>
+        <h1>HELLO WORLD!</h1>
+        {% include 'search/search-form.html'%}
+        
+        {% block content %}
+        <h3>This will be replaced.</h3>
+        {% endblock content %}
+
+        <script>
+            document.body.addEventListener("htmx:configRequest",(event)=>{event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}'
+        })
+        </script>
+        
+    </body>
+</html>
