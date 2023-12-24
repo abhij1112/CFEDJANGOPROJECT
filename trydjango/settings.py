@@ -87,20 +87,6 @@ WSGI_APPLICATION = 'Try-django.wsgi.application' ###
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        # 'ENGINE': 'django.db.backends.postgresql',
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": ("POSTGRES_DATABASE"),
-        "USER": ('POSTGRES_USER'),
-        "PASSWORD": ('POSTGRES_PASSWORD'),
-        "HOST": ("POSTGRES_HOST"),
-        "URL": ("POSTGRES_URL"),
-        "PORT": "5432"
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 
 # DATABASES = {
 #     'default': {
@@ -173,12 +159,12 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static", #os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, 'static')
 ]
 
-STATIC_ROOT = BASE_DIR / "staticfiles-cdn" #in production, we want  cdn
+STATIC_ROOT = os.path.join(BASE_DIR / "staticfiles_build",'static') 
 
-MEDIA_ROOT = BASE_DIR / "staticfiles-cdn" / "uploads"
+# MEDIA_ROOT = BASE_DIR / "staticfiles-cdn" / "uploads"
 
 
 
