@@ -81,7 +81,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Try-django.wsgi.application' ###
+WSGI_APPLICATION = 'trydjango.wsgi.application' ###
 
 
 # Database
